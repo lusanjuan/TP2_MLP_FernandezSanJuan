@@ -27,13 +27,13 @@ Continúa el TP1 (regresión softmax) sobre el mismo dataset (~18.800 posts de f
 
 ## Cómo correrlo
 
-**En Google Colab (recomendado):** abrir la notebook, elegir *Entorno de ejecución → Cambiar tipo de entorno → T4 GPU* y luego *Ejecutar todo*. La primera celda instala lo que falte. En CPU (como la corrida entregada) tarda alrededor de una hora, sobre todo por la búsqueda del MLP (~19 min) y el experimento de overfitting con la red 3×1024 (~40 s por época).
+**En Google Colab (recomendado):** abrir la notebook, elegir *Entorno de ejecución → Cambiar tipo de entorno → T4 GPU* y luego *Ejecutar todo*. La primera celda instala lo que falte. En CPU (como la corrida entregada) tarda unos 30 minutos en total, sobre todo por la búsqueda del MLP (11,8 min) y el experimento de overfitting con la red 3×1024 (10,6 s por época).
 
 **Localmente** (Python 3.10 o superior):
 
 ```
 pip install -r requirements.txt
-jupyter notebook TP2_MLP.ipynb
+jupyter notebook TP2_MLP_FernandezSanJuan.ipynb
 ```
 
 El dataset se descarga solo con `sklearn.datasets.fetch_20newsgroups`. Las semillas están fijas (incluida la del sampler de Optuna), aunque en GPU puede haber diferencias mínimas entre corridas. Para ver los experimentos: `mlflow ui`; para las curvas del experimento de overfitting: `tensorboard --logdir runs`.
